@@ -35,7 +35,7 @@ class PDFDocument:
  
 
 if __name__ == "__main__":
-    doc = PDFDocument(Path(r"C:\Users\mikro\OneDrive\Desktop\2122 mufredat.pdf"))
+    doc = PDFDocument(Path("test.pdf"))
     doc.validate()
     print("Dosya geçerli bir pdf dosyasıdır.")
     print(f"Dosya boyutu: {doc.original_size_bytes} bytes") 
