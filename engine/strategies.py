@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from options import CompressionOptions
+from .options import CompressionOptions
 
 class CompressionStrategy(ABC):
     @abstractmethod

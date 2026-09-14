@@ -1,9 +1,9 @@
 from pathlib import Path
-from document import PDFDocument
-from engine import PDFCompressor
-from strategies import CompressionStrategy, BalancedStrategy
-from result import CompressionResult
-from exceptions import PDFCompressionError
+from .document import PDFDocument
+from .engine import PDFCompressor
+from .strategies import CompressionStrategy, BalancedStrategy
+from .result import CompressionResult
+from .exceptions import PDFCompressionError
 
 class BatchCompressor:
 

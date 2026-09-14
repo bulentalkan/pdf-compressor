@@ -1,7 +1,7 @@
 import shutil
 import subprocess
-from    exceptions import GhostscriptNotFoundError, PDFCompressionError
-from options import CompressionOptions 
+from    .exceptions import GhostscriptNotFoundError, PDFCompressionError
+from .options import CompressionOptions 
 from pathlib import Path
 
 class GhostscriptRunner:

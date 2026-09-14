@@ -1,5 +1,5 @@
 from pathlib import Path
-from exceptions import CorruptPDFError, UnsupportedPDFError
+from .exceptions import CorruptPDFError, UnsupportedPDFError
 import pikepdf
 
 
@@ -13,7 +13,7 @@ class PDFDocument:
 
     @property
     def page_count(self) -> int:
-        with pikepdf.open(self.path) as pdf:
+        with pikepdf.open(self.path) as pdf:                                                                                                                                                                                                                    
             return len(pdf.pages)  
     # pikepdf/PyMuPDF gibi kütüphanelerle pdfleri aç,oku,kapat - sadece ve sadece bilgi için 
 
