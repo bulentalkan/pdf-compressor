@@ -18,6 +18,6 @@ class GhostscriptNotFoundError(PDFCompressionError):
 
 if __name__ == "__main__":
     try:
-        raise CorruptPDFError("yarrak")
+        raise CorruptPDFError("test")
     except PDFCompressionError as e:
-        print(f"yakalandı: {e}")
+        print(f"yakalandı: {e}")    
