@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 def test_valid_pdf_passes_validation():
-    yol = Path("tests/fixtures/2122 mufredat.pdf")
+    yol = Path("tests/fixtures/sample.pdf")
     doc = PDFDocument(yol)
     doc.validate()
     assert doc.page_count > 0
