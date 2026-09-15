@@ -36,7 +36,7 @@ pip install -r requirements.txt
 
 ### Option A — Windows executable (recommended for non-technical users)
 
-Just run `PDFCompressor.exe`. Ghostscript is bundled inside, so there's nothing else to install.
+Download the latest `PDFCompressor.exe` from the [Releases page](https://github.com/bulentalkan/pdf-compressor/releases/latest) (or directly: [PDFCompressor.exe](https://github.com/bulentalkan/pdf-compressor/releases/latest/download/PDFCompressor.exe)) and run it. Ghostscript is bundled inside, so there's nothing else to install.
 
 > **Note:** Windows may show a SmartScreen warning ("Windows protected your PC") the first time you run it, because the `.exe` isn't code-signed. This is a reputation/signing warning, not a virus detection — click "More info" → "Run anyway" to proceed.
 
