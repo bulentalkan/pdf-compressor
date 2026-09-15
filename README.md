@@ -18,8 +18,14 @@ It also uses `pikepdf`, but only to validate the file and read the metadata.
 
 ## Requirements
 
+### Using the pre-built Windows executable (`PDFCompressor.exe`)
+
+- Nothing else. Ghostscript is bundled inside the `.exe` — no separate installation needed.
+
+### Running from source
+
 - Python 3.10+
-- [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html) — must be installed separately and available on your system PATH. This tool calls it as an external program. It does not bundle it.
+- [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html) — must be installed separately and available on your system PATH. This tool calls it as an external program.
 - Python packages listed in `requirements.txt`:
 
 ```bash
@@ -27,6 +33,16 @@ pip install -r requirements.txt
 ```
 
 ## Installation 
+
+### Option A — Windows executable (recommended for non-technical users)
+
+Just run `PDFCompressor.exe`. Ghostscript is bundled inside, so there's nothing else to install.
+
+> **Note:** Windows may show a SmartScreen warning ("Windows protected your PC") the first time you run it, because the `.exe` isn't code-signed. This is a reputation/signing warning, not a virus detection — click "More info" → "Run anyway" to proceed.
+
+The bundled Ghostscript is licensed under AGPL-3.0 — see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) for details.
+
+### Option B — Run from source
 
 1) Clone the repo:
 
@@ -44,6 +60,17 @@ pip install -r requirements.txt
 
 
 ## Usage
+
+### GUI
+
+```bash
+python gui.py
+```
+
+A simple desktop interface (English/Turkish) — select one or more PDFs, pick a strategy, and compress. This is also what `PDFCompressor.exe` runs.
+
+### Command line
+
 Compress a file with the default strategy (the balanced one):
 ```bash
 python main.py document.pdf
@@ -67,16 +94,16 @@ Available ones:
 - `balanced` — good trade-off between size and quality (default)
 - `max` — smallest file size, most aggressive compression
 
-A drag and drop version for non technical users is planned once Ghostscript bundling is complete.
-Will add ui when i get the slightest chance.
-
 ## Project Structure
 
 ```
 pdf-compressor/
 ├── main.py                    # CLI entry point
+├── gui.py                     # desktop GUI (customtkinter, EN/TR)
 ├── requirements.txt
 ├── conftest.py                # lets pytest find the engine/ package
+├── THIRD_PARTY_LICENSES.md    # license notice for bundled Ghostscript (AGPL-3.0)
+├── vendor/gs/                 # bundled Ghostscript binaries (not committed — see .gitignore)
 ├── engine/
 │   ├── __init__.py
 │   ├── document.py            # PDFDocument — validation, metadata
@@ -94,4 +121,4 @@ pdf-compressor/
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+MIT — see [LICENSE](LICENSE) for details. Note: the bundled Windows executable also includes Ghostscript, which is licensed separately under AGPL-3.0 — see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md).
